@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant & Price</title>
+    <link rel="stylesheet" href="css/price.css">
+    <script src="Grafik/demo/Chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- navbar dan dropdown -->
+    <nav>
+        <div class="logo">
+            <!-- <img src="../New folder/img/logoku (2).png" alt="">Nature -->
+            <h3>Natureshop</h3>
+        </div>
+        <label for="btn" class="icon">
+            <span class="fa fa-bars"></span>
+        </label>
+        <input type="checkbox" id="btn">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="price.html">Plant & Price</a></li>
+            <li>
+                <label for="btn-1" class="show">Product +</label>
+                <a href="#">Product ></a>
+                <input type="checkbox" id="btn-1">
+                <ul>
+                    <div class="service-list">
+                        <li><a href="bonsai.html">Bonsai</a></li>
+                        <li><a href="algaonema.html">Aglaonema</a></li>
+                        <li><a href="monstera.html">Monstera</a></li>
+                        <!-- <li><a href="#">Motion Graphic</a></li> -->
+                    </div>
+                </ul>
+            </li>
+            <li><a href="galeri.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+
+    <!-- tabel -->
+    <div class="container7">
+
+        <h2>Plant and Price</h2>
+        <div class="table-container">
+            <br>
+            <table class="table-responsive">
+                <thead>
+                    <tr">
+                        <td rowspan="2">No</td>
+                        <td rowspan="2">Name of Plant</td>
+                        <td rowspan="2">Price</td>
+                        </tr>
+
+                        <!-- <tr>
+                            <td>Ayah</td>
+                            <td>Ibu</td>
+                        </tr> -->
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Bonsai</td>
+                        <td>$120.99</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Aglaonema</td>
+                        <td>$89.99</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Monstera</td>
+                        <td>$109.99</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- grafik -->
+    <div class="container9">
+
+        <h2>Average Purchase</h2><br><br>
+        <canvas id="bar"></canvas>
+
+        <script>
+            var ctx = document.getElementById("bar");
+            var bar = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ["Bonsai", "Algaonema", "Monstera"],
+                    datasets: [{
+                        label: "Revenue",
+                        backgroundColor: "#425245",
+                        hoverBackgroundColor: "#28312a",
+                        borderColor: "#425245",
+                        data: [20, 60, 70],
+                    }],
+                },
+                options: {
+
+                    layout: {
+                        padding: {
+                            left: 10,
+                            right: 25,
+                            top: 25,
+                            bottom: 0
+                        }
+                    },
+                    scales: {
+                        xAxes: [{
+                            time: {
+                                unit: 'month'
+                            },
+                            gridLines: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            ticks: {
+                                maxTicksLimit: 6
+                            },
+                            maxBarThickness: 50,
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                min: 0,
+                                max: 100,
+                                maxTicksLimit: 5,
+                                padding: 10,
+
+                            },
+                            gridLines: {
+                                color: "rgb(234, 236, 244)",
+                                zeroLineColor: "rgb(234, 236, 244)",
+                                drawBorder: false,
+                                borderDash: [2],
+                                zeroLineBorderDash: [2]
+                            }
+                        }],
+                    },
+                    legend: {
+                        display: false
+                    },
+                    tooltips: {
+                        titleMarginBottom: 10,
+                        titleFontColor: '#6e707e',
+                        titleFontSize: 14,
+                        backgroundColor: "rgb(255,255,255)",
+                        bodyFontColor: "#858796",
+                        borderColor: '#dddfeb',
+                        borderWidth: 1,
+                        xPadding: 15,
+                        yPadding: 15,
+                        displayColors: false,
+                        caretPadding: 10,
+
+                    },
+                }
+            });
+        </script>
+
+
+    </div>
+
+
+
+
+    <!-- footer -->
+    <footer>
+        <p>Copyright &copy; 2021 - Natureshop</p>
+    </footer>
+
+
+
+</body>
+
+</html>
